@@ -11,7 +11,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 //sh
-                bat "docker build -t=aniruddha/selenium ."
+                bat "docker build -t=selenium ."
             }
         }
         stage('Push Image') {
@@ -21,7 +21,7 @@ pipeline {
                     echo "this is star ***********************************************"
                     echo "${pass}"
 			        bat "docker login --username=${user} --password=${pass}"
-			        bat "docker push aniruddha/selenium:latest"
+			        bat "docker push selenium:latest"
 			    }
             }
         }
